@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import GameDisplay from "./GameDisplay";
 
 function Jeopardy(props) {
 
@@ -52,23 +53,8 @@ function handleChange(e) {
   return (
     <div>
       <div>
-        <p> <span style={{ fontWeight: "bold" }}>Question: </span> {jeopardyData.question} </p>
-      </div>
-
-      <div>
-        {/* {console.log(jeopardyData.category)} */}
-      <p> <span style={{ fontWeight: "bold" }}>Category title: </span> {jeopardyData.category.title} </p>
+        <GameDisplay gameData={jeopardyData} userAnswer = {answer} onAnswerFunc = {handleSubmit} onAnswerType = {handleChange}/>
       
-      </div>
-      <div>
-      <p> <span style={{ fontWeight: "bold" }}>Points: </span> {jeopardyData.value} </p>
-      </div>
-      <div>
-      <form onSubmit={handleSubmit}> 
-        <p style={{ fontWeight: "bold" }}> Answer: <input type="text" name="userAnswer" placeholder='Enter your answer!!' value={answer} onChange={handleChange} /></p>
-      
-      <button> Submit</button>
-      </form> 
       </div>
       <div>
         <p>Your score: <span style={{color:"green"}}>{score}</span> </p>
