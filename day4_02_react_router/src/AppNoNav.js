@@ -30,7 +30,7 @@ function AppNoNav() {
         <Route path="/about" Component={AboutMe}></Route>
         <Route path="/training" Component={Training}></Route>
         <Route path="/" Component={Home}></Route>
-        <Route Component={PageNotFound}></Route>
+        <Route path="*" Component={PageNotFound}></Route>
       
       </Routes>
     </Router>

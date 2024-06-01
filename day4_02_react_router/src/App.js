@@ -13,18 +13,8 @@ import Home from './components/Home';
 
 function App() {
   return (
-    <Router>
-      <MyNavbar />
-    <Routes>
-      <Route Component={PageNotFound}></Route>
-      <Route path="/" Component={Home}></Route>
-      <Route path="/jeopardy" Component={Jeopardy}></Route>
-      <Route path="/about" Component={AboutMe}></Route>
-      <Route path="/training" Component={Training}></Route>
-      <Route path="*" Component={PageNotFound}></Route>
-
-    </Routes>
-  </Router>);
+    <AppWithNav></AppWithNav>
+  );
 }
 
 export default App;

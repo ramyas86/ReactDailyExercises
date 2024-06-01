@@ -11,7 +11,7 @@ return (
 
       <div>
         {/* {console.log(jeopardyData.category)} */}
-      {/* <p> <span style={{ fontWeight: "bold" }}>Category title: </span> {jeopardyData.category.title} </p> */}
+      <p> <span style={{ fontWeight: "bold" }}>Category title: </span> {jeopardyData.category?jeopardyData.category.title:""} </p>
       
       </div>
       <div>

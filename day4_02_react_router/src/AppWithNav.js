@@ -20,7 +20,7 @@ function AppWithNav() {
         <Route path="/jeopardy" Component={Jeopardy}></Route>
         <Route path="/about" Component={AboutMe}></Route>
         <Route path="/training" Component={Training}></Route>
-        <Route Component={PageNotFound}></Route>
+        <Route path="*" Component={PageNotFound}></Route>
 
       </Routes>
     </Router>
