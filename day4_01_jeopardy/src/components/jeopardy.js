@@ -63,7 +63,7 @@ function Jeopardy(props) {
 
   //when the component mounts, get a the first question
   useEffect(() => {
-    getNewQuestion();
+    // getNewQuestion();
     getCategories();
   }, [])
 
@@ -113,6 +113,7 @@ function Jeopardy(props) {
       setScore(score - jeopardyData.value);
     }
     getCategories();
+    setJeopardyData({});
     // getNewQuestion(); // get new question
     setAnswer("");
   }
