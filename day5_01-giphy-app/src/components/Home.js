@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import GifList from "./GifList";
 
 
 function Home() {
@@ -21,19 +22,6 @@ function Home() {
       });
   }
 
-  const handleSave = (imageUrl) => {
-    let savedImages = [];
-    let gifString = localStorage.getItem("savedGifs");
-    console.log(gifString);
-    if (gifString) {
-      savedImages = gifString.split(",");
-    }
-    savedImages = [...savedImages, imageUrl]
-    console.log(savedImages);
-    localStorage.setItem("savedGifs", savedImages);
-  }
-
-
   //when the component mounts, get a the first question
   useEffect(() => {
     getTrendingGifs();
@@ -44,17 +32,10 @@ function Home() {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>It is the home page</h1>
-      <div>
-        Trending gifs
+      <div style={{textAlign:"center"}}>
+       <h5> Trending gifs </h5>
         <div name="ImageHolder">
-          {gifs.map((gifElement, index) => {
-            return (
-              <div key={index}>
-              <img src={gifElement.images.original.url} key={index} alt="Trending Gif"  /> 
-                <button type="button" onClick={() => { handleSave(gifElement.images.original.url) }}> Save</button>
-              </div>
-            )
-          })}
+          <GifList gifArray={gifs}></GifList>
         </div>
       </div>
     </div>

@@ -8,9 +8,9 @@ function MyNavbar() {
       <Container>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/search">Search Page</Nav.Link>
-            <Nav.Link href="/saved">Saved Page</Nav.Link>
+            <Nav.Link key="0" href="/">Home</Nav.Link>
+            <Nav.Link key="1" href="/search">Search Page</Nav.Link>
+            <Nav.Link key="2" href="/saved">Saved Page</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

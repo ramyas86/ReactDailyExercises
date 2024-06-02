@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SavedPage() {
   const [gifs, setGifs] = useState([]);
@@ -6,7 +7,7 @@ function SavedPage() {
   useEffect(() => {
     let savedGifs = [];
     let inStorage = localStorage.getItem("savedGifs");
-    // console.log("Data type: " + typeof (inStorage));  
+    console.log("Data type: " + typeof (inStorage));
     if (inStorage) {
       savedGifs = inStorage.split(",");
       console.log(savedGifs);
@@ -31,15 +32,16 @@ function SavedPage() {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>It is the Saved page</h1>
-      <br></br><br></br><br></br>
-      <div>
+      <br></br><br></br>
+      <div style={{textAlign:"center"}}>
         <div><button type="button" onClick={() => { handleClear() }}> Clear</button></div>
+        <br></br>
         {
           gifs.map((gifUrl, index) => {
             return (
-              <div>
+              <div className="my-5">
                 <img key={index} alt="Trending Gif" src={gifUrl} />
-                <button type="button" onClick={() => { handleRemove(index) }}> Remove</button>
+                <button className="btn btn-outline-secondary mx-5" type="button" onClick={() => { handleRemove(index) }}> Remove</button>
               </div>
             )
           })}
